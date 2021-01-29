@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { CharactersApiService } from "../characters/character/shared/characters-api.service";
+import { Observable } from "rxjs";
 
 @Component({
-  selector: 'app-characters',
-  templateUrl: './characters.component.html',
-  styleUrls: ['./characters.component.sass']
+  selector: "app-characters",
+  templateUrl: "./characters.component.html",
+  styleUrls: ["./characters.component.sass"],
 })
 export class CharactersComponent implements OnInit {
-
-  constructor() { }
+  constructor(private characterSvc: CharactersApiService) {}
+  allCharacters: Observable<any>;
 
   ngOnInit() {
+    this.getCharacters();
   }
 
+  getCharacters() {
+    this.allCharacters = this.characterSvc.getAllCharacters();
+  }
 }

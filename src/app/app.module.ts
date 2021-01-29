@@ -1,13 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { CharacterComponent } from './characters/character/character.component';
-import { CharactersComponent } from './characters/characters.component';
-import { FavouritesComponent } from './favourites/favourites.component';
-import { HeaderComponent } from './header/header.component';
-import { ModalComponent } from './modal/modal.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { CharacterComponent } from "./characters/character/character.component";
+import { CharactersComponent } from "./characters/characters.component";
+import { FavouritesComponent } from "./favourites/favourites.component";
+import { HeaderComponent } from "./header/header.component";
+import { ModalComponent } from "./modal/modal.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -16,13 +17,10 @@ import { ModalComponent } from './modal/modal.component';
     CharactersComponent,
     FavouritesComponent,
     HeaderComponent,
-    ModalComponent
+    ModalComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
